@@ -12,9 +12,9 @@ import '../App.css'; // Import the CSS for animations
 
 
 import HeroImage from '../utils/images/Basics.png';
+import PortFolioHero from '../utils/images/PortfolioHero.gif';
 import PendoPlatform from '../utils/images/PendoPlatform.gif';
 import ContractTool from '../utils/images/ContractTool.gif';
-import PortFolioHero from '../utils/images/PortfolioHero.gif';
 import StreamedlineProcesses from '../utils/images/StreamedlineProcesses.gif';
 import WeatherForecast from '../utils/images/WeatherForcast.gif';
 
@@ -29,18 +29,22 @@ const skills = [
 
 const projects = [
     {
+        title: 'Contract Tool',
         img: ContractTool,
         description: '1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
     },
     {
+        title: 'Pendo: Property Management',
         img: PendoPlatform,
         description: '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
     },
     {
+        title: 'Streamlined Manufacturing Units',
         img: StreamedlineProcesses,
         description: '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
     },
     {
+        title: 'Weather Forecaster',
         img: WeatherForecast,
         description: '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
     }
@@ -61,6 +65,17 @@ export const Home = () => {
     return (
         <Grid display='flex' flexDirection={{ xs: 'column', sm: 'row', md: 'row' }}>
             {isMobile ? <NavMenu menuItems={menuItems} /> : <SidebarMenu menuItems={menuItems} />}
+
+            {isMobile && <Grid
+                sx={{
+                    height: '3rem',
+                    top:0, left:0,
+                    width: '100%',
+                    background: '#ffffff',
+                    position: 'fixed',
+                    zIndex:10
+                }}>
+            </Grid>}
 
             <Box width={!isMobile ? '80%' : '100%'} ml={!isMobile ? 5 : 0} mt={isMobile ? 5 : 0} position='relative' overflow='auto'>
                 {/* ---------------Intro section---------------*/}
@@ -93,13 +108,11 @@ export const Home = () => {
                                     </Box>
                                     <Box component="span" sx={{ color: 'grey' }}>, <br></br>one line of code at a time.</Box>
                                 </Typography>}
-                            {/* {!isMobile ? */}
                             <Grid display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginTop={isMobile ? 0 : 5}>
                                 <Typography
                                     align='center'
                                     sx={{
                                         fontFamily: 'cursive',
-                                        // fontSize: '2rem',
                                         fontSize: isMobile ? '1rem' : '2rem',
                                         backgroundImage: 'linear-gradient(45deg, #FF03E4 30%, #6BFC05 90%)',
                                         WebkitBackgroundClip: 'text',
@@ -117,7 +130,6 @@ export const Home = () => {
                                     }}
                                 >Monsoon Dibragede | Full Stack Developer</Typography>
                             </Grid>
-                            {/* : null} */}
                         </Grid>
                         <Grid item xs={12} sm={12} md={6} display='flex' justifyContent='center' marginTop={isMobile ? 5 : 0}>
                             <img src={PortFolioHero} style={{ maxWidth: '100%', height: isMobile ? '20rem' : '30rem' }} />
@@ -242,7 +254,7 @@ export const Home = () => {
                             {projects.map((obj, index) => (
                                 <ScrollAnimation>
                                     <Grid item key={index} xs={12} sm={12} md={12} display='flex' justifyContent='center' alignItems='center'>
-                                        <ProjectCard projectNum={index} image={obj.img} description={obj.description} />
+                                        <ProjectCard projectNum={index} title={obj.title} image={obj.img} description={obj.description} />
                                     </Grid>
                                 </ScrollAnimation>
                             ))}
