@@ -11,12 +11,12 @@ import ScrollAnimation from '../common/ScrollAnimation'; // Import the ScrollAni
 import '../App.css'; // Import the CSS for animations
 
 
-import HeroImage from '../utils/images/Basics.png';
+import AboutPhoto from '../utils/images/AboutPhoto.png';
 import PortFolioHero from '../utils/images/PortfolioHero.gif';
 import PendoPlatform from '../utils/images/PendoPlatform.gif';
 import ContractTool from '../utils/images/ContractTool.gif';
 import StreamedlineProcesses from '../utils/images/StreamedlineProcesses.gif';
-import WeatherForecast from '../utils/images/WeatherForcast.gif';
+import WeatherForecast from '../utils/images/WeatherForecast.gif';
 
 const skills = [
     'Web Development',
@@ -30,23 +30,27 @@ const skills = [
 const projects = [
     {
         title: 'Contract Tool',
-        img: ContractTool,
-        description: '1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
+        image: ContractTool,
+        description: 'This tool is designed to extract key information from any contract efficiently. With an integrated Machine Learning interface for document classification and clustering, the tool\'s efficiency and functionality are significantly enhanced. This advanced feature allows for precise organization and analysis of contract data, making it an invaluable asset for managing large volumes of legal documents.',
+        techStack: 'Node.js, React.js, Redux, MongoDB, Redis, Amazon Congnito, Natural Language Processing, AWS'
     },
     {
         title: 'Pendo: Property Management',
-        img: PendoPlatform,
-        description: '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
+        image: PendoPlatform,
+        description: 'Pendo is a comprehensive property management platform that empowers landlords to list their properties online, find and onboard tenants seamlessly, and manage over USD 2 million in monthly transactions. From tenant verification to onboarding, and from rent collection to disbursement to landlords, Pendo streamlines the entire process through a user-friendly online interface.',
+        techStack: 'Node.js, React.js, Redux, MongoDB, Redis, AWS SQS, AWS S3, Mandrill, Payment Gateways'
     },
     {
         title: 'Streamlined Manufacturing Units',
-        img: StreamedlineProcesses,
-        description: '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
+        image: StreamedlineProcesses,
+        description: 'This platform is designed to streamline the various processes involved in a Battery Manufacturing Unit by seamlessly integrating multiple micro applications. It optimizes raw material management, maintains efficient workflows, and monitors assembly lines to ensure quality control at every stage. The platform facilitates real-time inventory tracking, automates order processing, and enhances supply chain coordination, significantly improving operational efficiency and productivity.',
+        techStack: 'React.js, Redux, .Net, Webpack Module Federation, Storybook, MySQL, Kafka, AWS'
     },
     {
         title: 'Weather Forecaster',
-        img: WeatherForecast,
-        description: '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor sit amet felis bibendum tincidunt. Suspendisse potenti; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus lacinia odio vitae vestibulum vestibulum.'
+        image: WeatherForecast,
+        description: 'Weather Forecaster is a powerful tool for predicting weather conditions in any location. Leveraging Accuweather\'s APIs, it provides accurate forecasts and displays the results with a beautiful user interface. The application categorizes various weather conditions such as sunny, partly cloudy, cloudy, and rainy, offering users a clear and detailed weather overview.',
+        techStack: 'React.js, Node.js, MongoDb'
     }
 ]
 
@@ -149,25 +153,25 @@ export const Home = () => {
                             <Box marginTop={3} height='100%' display='flex' flexDirection='column' alignItems='center'>
                                 <ScrollAnimation>
                                     <Grid xs={12} sm={12} md={12}>
-                                        <Typography align='center'>HELLO,</Typography>
+                                        <Typography align='center' sx={{ color: '#626567' }}>HELLO,</Typography>
                                     </Grid>
                                 </ScrollAnimation>
                                 <ScrollAnimation>
                                     <Grid xs={12} sm={12} md={12}>
-                                        <Typography align='center' sx={{ fontWeight: 'bold', fontSize: '30px' }} >I'm Monsoon Dibragede.</Typography>
+                                        <Typography align='center' sx={{ fontWeight: 'bold', fontSize: '30px', color: '#626567'  }} >I'm Monsoon Dibragede.</Typography>
                                     </Grid>
                                 </ScrollAnimation>
                                 <Grid width={isMobile ? '100%' : '50%'} xs={12} sm={12} md={12}>
                                     <ScrollAnimation>
                                         <Typography align='center' paddingTop={2} paddingBottom={2}>
-                                            <Box component="span" sx={{ color: 'grey' }}>Senior software developer with excellent skills in architecting robust and scalable software applications.
+                                            <Box component="span" sx={{ color: '#626567' }}>Senior software developer with excellent skills in architecting robust and scalable software applications.
                                                 With a deep expertise in the</Box>
                                             <Box component="span" sx={{ fontWeight: 'bold' }}> MERN stack</Box>
-                                            <Box component="span" sx={{ color: 'grey' }}>, I have developed numerous innovative projects using React and Node.js.
+                                            <Box component="span" sx={{ color: '#626567' }}>, I have developed numerous innovative projects using React and Node.js.
                                                 My portfolio showcases a collection of cutting-edge applications that highlight my technical proficiency and creativity.
-                                                Beyond web development, I am also passionate about Machine Learning and have contributed to various projects in this exciting field.</Box>
+                                                Beyond web development, I am also passionate about Machine Learning and have contributed to some projects in this exciting field.</Box>
                                         </Typography>
-                                        <img src={HeroImage} style={{ maxWidth: '100%', height: 'auto' }} />
+                                        <img src={AboutPhoto} style={{ maxWidth: '100%', height: 'auto' }} />
                                     </ScrollAnimation>
                                 </Grid>
                             </Box>
@@ -254,7 +258,8 @@ export const Home = () => {
                             {projects.map((obj, index) => (
                                 <ScrollAnimation>
                                     <Grid item key={index} xs={12} sm={12} md={12} display='flex' justifyContent='center' alignItems='center'>
-                                        <ProjectCard projectNum={index} title={obj.title} image={obj.img} description={obj.description} />
+                                        <ProjectCard projectNum={index} {...obj} />
+                                        {/* <ProjectCard projectNum={index} title={obj.title} image={obj.img} description={obj.description} /> */}
                                     </Grid>
                                 </ScrollAnimation>
                             ))}
