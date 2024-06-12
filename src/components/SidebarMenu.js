@@ -4,6 +4,7 @@ import Divider from '@mui/material/Divider';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { useState } from "react";
+import { colors } from "../utils/colorCode/colors";
 
 export const SidebarMenu = ({ menuItems }) => {
     const [selectedItem, setSelectedItem] = useState(null);
@@ -17,7 +18,7 @@ export const SidebarMenu = ({ menuItems }) => {
             <Grid item width='20%' position='fixed' height='100%' display='flex' flexDirection='column' justifyContent='space-between'>
                 <Grid>
                     {menuItems.map((item, index) =>
-                        <Typography key={index} paddingTop='20%' paddingLeft='20%' height='2rem' fontWeight='bold'>
+                        <Typography key={index} paddingTop='10%' paddingLeft='20%' height='2rem' fontWeight='bold'>
                             <Link
                                 to={item.to}
                                 smooth={true}
@@ -27,12 +28,12 @@ export const SidebarMenu = ({ menuItems }) => {
                             >
                                 {item.name}
                             </Link>
-                            {selectedItem === item.name && <Divider style={{ backgroundColor: 'black' }} />}
+                            {selectedItem === item.name && <Divider style={{ backgroundColor: colors.yellow }} />}
                             {selectedItem !== item.name && <Divider />}
                         </Typography>
                     )}
                 </Grid>
-                <Grid paddingBottom='20%' display='flex' flexDirection='column' alignItems='center'>
+                <Grid paddingBottom='10%' display='flex' flexDirection='column' alignItems='center'>
                     <Divider style={{ width: '80%', margin: '20px 0' }} />
                     <Grid>
                         <Typography height='2rem' fontWeight='bold' >Contact</Typography>
@@ -45,10 +46,10 @@ export const SidebarMenu = ({ menuItems }) => {
                         </Grid>
                         <Grid item>
                             <Typography>
-                            <a href="https://www.linkedin.com/in/monsoon-dibragede-22077149/" target="_blank" rel="noopener noreferrer" style={{ color: '#0e76a8' }}>
-                                LinkedIn
+                                <a href="https://www.linkedin.com/in/monsoon-dibragede-22077149/" target="_blank" rel="noopener noreferrer" style={{ color: '#0e76a8' }}>
+                                    LinkedIn
                                 </a>
-                                </Typography>
+                            </Typography>
                         </Grid>
                     </Grid>
                     <Grid container direction="row" alignItems="center" spacing={1}>
@@ -58,7 +59,7 @@ export const SidebarMenu = ({ menuItems }) => {
                             </IconButton>
                         </Grid>
                         <Grid item>
-                            <Typography>monsoon.dibragede@gmail.com</Typography>
+                            <Typography sx={{fontSize: 'small'}}>monsoon.dibragede@gmail.com</Typography>
                         </Grid>
                     </Grid>
                 </Grid>
