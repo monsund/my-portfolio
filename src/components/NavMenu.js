@@ -11,22 +11,30 @@ export const NavMenu = ({ menuItems }) => {
     };
 
     return (
-        <Grid container sx={{zIndex: 10}}>
-            <Grid item>
-                <IconButton
-                    onClick={handleDrawerToggle}
-                    sx={{
-                        display: { xs: 'block', sm:'none', md: 'none' },
-                        position: 'fixed',
-                        zIndex: 10,
-                        // top: 10,
-                        // left: 10
-                    }}>
-                    <MenuIcon />
-                </IconButton>
+        <Grid container sx={{ zIndex: 100 }}>
+            <Grid item >
+                {!drawerOpen &&
+                    <IconButton
+                        onClick={handleDrawerToggle}
+                        sx={{
+                            display: { xs: 'block', sm: 'none', md: 'none' },
+                            position: 'fixed',
+                            zIndex: 100,
+                        }}>
+                        <MenuIcon />
+                    </IconButton>
+
+                }
             </Grid>
             <Grid item>
-                <Drawer open={drawerOpen} onClose={handleDrawerToggle} sx={{ zIndex: 10, display: { xs: 'block', sm:'none', md: 'none' } }}>
+                <Drawer open={drawerOpen} onClose={handleDrawerToggle}
+                    sx={{
+                        zIndex: 10,
+                        display: { xs: 'block', sm: 'none', md: 'none' },
+                        '& .MuiDrawer-paper': {
+                            width: '50%',
+                        }
+                    }}>
                     <List>
                         {menuItems.map((item, index) => (
                             <ListItem button key={index}>
@@ -39,5 +47,5 @@ export const NavMenu = ({ menuItems }) => {
                 </Drawer>
             </Grid>
         </Grid>
-    )
+    );
 }

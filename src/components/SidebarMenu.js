@@ -1,5 +1,5 @@
 import { Grid, IconButton, Typography } from "@mui/material"
-import { Link } from "react-scroll"
+import { Link } from "react-scroll";
 import Divider from '@mui/material/Divider';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -44,7 +44,11 @@ export const SidebarMenu = ({ menuItems }) => {
                             </IconButton>
                         </Grid>
                         <Grid item>
-                            <Typography>LinkedIn</Typography>
+                            <Typography>
+                            <a href="https://www.linkedin.com/in/monsoon-dibragede-22077149/" target="_blank" rel="noopener noreferrer" style={{ color: '#0e76a8' }}>
+                                LinkedIn
+                                </a>
+                                </Typography>
                         </Grid>
                     </Grid>
                     <Grid container direction="row" alignItems="center" spacing={1}>
