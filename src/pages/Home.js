@@ -7,15 +7,17 @@ import { SidebarMenu } from '../components/SidebarMenu';
 
 import { SkillCard } from '../common/SkillCard';
 import { ProjectCard } from '../common/ProjectCard';
-import ScrollAnimation from '../common/ScrollAnimation'; // Import the ScrollAnimation component
-import '../App.css'; // Import the CSS for animations
+import ScrollAnimation from '../common/ScrollAnimation';
+import '../App.css';
+
+import {colors} from '../utils/colorCode/colors';
 
 
 import AboutPhoto from '../utils/images/AboutPhoto.png';
 import PortFolioHero from '../utils/images/PortfolioHero.gif';
 import PendoPlatform from '../utils/images/PendoPlatform.gif';
 import ContractTool from '../utils/images/ContractTool.gif';
-import StreamedlineProcesses from '../utils/images/StreamedlineProcesses.gif';
+import StreamlinedProcesses from '../utils/images/StreamlinedProcesses.gif';
 import WeatherForecast from '../utils/images/WeatherForecast.gif';
 
 const skills = [
@@ -42,7 +44,7 @@ const projects = [
     },
     {
         title: 'Streamlined Manufacturing Units',
-        image: StreamedlineProcesses,
+        image: StreamlinedProcesses,
         description: 'This platform is designed to streamline the various processes involved in a Battery Manufacturing Unit by seamlessly integrating multiple micro applications. It optimizes raw material management, maintains efficient workflows, and monitors assembly lines to ensure quality control at every stage. The platform facilitates real-time inventory tracking, automates order processing, and enhances supply chain coordination, significantly improving operational efficiency and productivity.',
         techStack: 'React.js, Redux, .Net, Webpack Module Federation, Storybook, MySQL, Kafka, AWS'
     },
@@ -50,7 +52,7 @@ const projects = [
         title: 'Weather Forecaster',
         image: WeatherForecast,
         description: 'Weather Forecaster is a powerful tool for predicting weather conditions in any location. Leveraging Accuweather\'s APIs, it provides accurate forecasts and displays the results with a beautiful user interface. The application categorizes various weather conditions such as sunny, partly cloudy, cloudy, and rainy, offering users a clear and detailed weather overview.',
-        techStack: 'React.js, Node.js, MongoDb'
+        techStack: 'React.js, Node.js, MongoDB'
     }
 ]
 
@@ -59,8 +61,8 @@ export const Home = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const menuItems = [
-        { name: 'Introduction', to: 'intro' },
-        { name: 'About', to: 'about' },
+        { name: 'Home', to: 'home' },
+        { name: 'Intro', to: 'intro' },
         { name: 'Skills', to: 'skills' },
         { name: 'Projects', to: 'projects' },
         ...(isMobile ? [{ name: 'Contact', to: 'contact' }] : [])
@@ -82,13 +84,13 @@ export const Home = () => {
             </Grid>}
 
             <Box width={!isMobile ? '80%' : '100%'} ml={!isMobile ? 5 : 0} mt={isMobile ? 5 : 0} position='relative' overflow='auto'>
-                {/* ---------------Intro section---------------*/}
-                <Element name="intro">
+                {/* ---------------Home section---------------*/}
+                <Element name="home">
                     <Grid container display='flex' justifyContent='center' alignItems='center' backgroundColor='#FAF8F8'>
                         <Grid item xs={12} sm={12} md={6} justifyContent='center'>
                             {!isMobile ?
                                 <Typography align='center' >
-                                    <Box component="span" sx={{ fontSize: '3rem', color: 'black' }}>Craft the </Box>
+                                    <Box component="span" sx={{ fontSize: '3rem', color: colors.lightGrey }}>Craft the </Box>
                                     {/* {' the '} */}
                                     <Box component="span" sx={{
                                         fontSize: '4rem',
@@ -101,7 +103,7 @@ export const Home = () => {
                                     <Box component="span" sx={{ fontSize: '2rem', color: 'grey' }}>, one line of code at a time.</Box>
                                 </Typography> :
                                 <Typography align='center' paddingTop={2} paddingBottom={2}>
-                                    <Box component="span" sx={{ color: 'grey' }}>Craft the </Box>
+                                    <Box component="span" sx={{ color: colors.lightGrey }}>Craft the </Box>
                                     <Box component="span" sx={{
                                         fontSize: '1.2rem',
                                         backgroundImage: 'linear-gradient(45deg, #C7DE0D 30%, #F22003 90%)',
@@ -110,64 +112,60 @@ export const Home = () => {
                                     }}>
                                         Future of Technology
                                     </Box>
-                                    <Box component="span" sx={{ color: 'grey' }}>, <br></br>one line of code at a time.</Box>
+                                    <Box component="span" sx={{ color: colors.lightGrey }}>, <br></br>one line of code at a time.</Box>
                                 </Typography>}
                             <Grid display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginTop={isMobile ? 0 : 5}>
                                 <Typography
                                     align='center'
                                     sx={{
-                                        fontFamily: 'cursive',
                                         fontSize: isMobile ? '1rem' : '2rem',
-                                        backgroundImage: 'linear-gradient(45deg, #FF03E4 30%, #6BFC05 90%)',
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent'
+                                        color: colors.darkGrey,
                                     }}
                                 >Website built in React</Typography>
                                 <Typography
                                     align='center'
                                     sx={{
-                                        fontFamily: 'cursive',
                                         fontSize: isMobile ? '.6rem' : '1rem',
-                                        backgroundImage: 'linear-gradient(45deg, #F90C01 30%, #6BFC05 90%)',
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent'
+                                        // backgroundImage: 'linear-gradient(45deg, #F90C01 30%, #6BFC05 90%)',
+                                        // WebkitBackgroundClip: 'text',
+                                        // WebkitTextFillColor: 'transparent'
+                                        color: colors.white,
+                                        background: colors.yellow,
+                                        borderRadius: '5px',
+                                        marginBottom: '5px',
+                                        padding: '5px'
                                     }}
                                 >Monsoon Dibragede | Full Stack Developer</Typography>
                             </Grid>
                         </Grid>
                         <Grid item xs={12} sm={12} md={6} display='flex' justifyContent='center' marginTop={isMobile ? 5 : 0}>
-                            <img src={PortFolioHero} style={{ maxWidth: '100%', height: isMobile ? '20rem' : '30rem' }} />
+                            <img src={PortFolioHero} style={{ maxWidth: '100%', height: isMobile ? '15rem' : '20rem' }} />
                         </Grid>
                     </Grid>
                 </Element>
 
-                {/* ---------------About section---------------*/}
-                <Element name="about">
+                {/* ---------------Intro section---------------*/}
+                <Element name="intro">
                     <ScrollAnimation>
                         <Box marginTop={8} backgroundColor='white'>
-                            <ScrollAnimation>
-                                <Grid xs={12} sm={12} md={12}>
-                                    <Typography align='center' sx={{ fontWeight: 'bold', fontSize: '50px' }}>About</Typography>
-                                </Grid>
-                            </ScrollAnimation>
                             <Box marginTop={3} height='100%' display='flex' flexDirection='column' alignItems='center'>
                                 <ScrollAnimation>
                                     <Grid xs={12} sm={12} md={12}>
-                                        <Typography align='center' sx={{ color: '#626567' }}>HELLO,</Typography>
+                                        <Typography align='center' sx={{ color: colors.lightGrey }}>HELLO,</Typography>
                                     </Grid>
                                 </ScrollAnimation>
                                 <ScrollAnimation>
                                     <Grid xs={12} sm={12} md={12}>
-                                        <Typography align='center' sx={{ fontWeight: 'bold', fontSize: '30px', color: '#626567'  }} >I'm Monsoon Dibragede.</Typography>
+                                        <Typography align='center' sx={{ fontWeight: 'bold', fontSize: '30px', color: colors.lightGrey  }} >I'm Monsoon Dibragede.</Typography>
                                     </Grid>
                                 </ScrollAnimation>
                                 <Grid width={isMobile ? '100%' : '50%'} xs={12} sm={12} md={12}>
                                     <ScrollAnimation>
                                         <Typography align='center' paddingTop={2} paddingBottom={2}>
-                                            <Box component="span" sx={{ color: '#626567' }}>Senior software developer with excellent skills in architecting robust and scalable software applications.
+                                            <Box component="span" sx={{ color: colors.lightGrey }}>Senior software developer with excellent skills in architecting robust and scalable software applications.
                                                 With a deep expertise in the</Box>
                                             <Box component="span" sx={{ fontWeight: 'bold' }}> MERN stack</Box>
-                                            <Box component="span" sx={{ color: '#626567' }}>, I have developed numerous innovative projects using React and Node.js.
+                                            <Box component="span" sx={{ color: colors.lightGrey }}>, I have developed numerous innovative projects using React and Node.js.
                                                 My portfolio showcases a collection of cutting-edge applications that highlight my technical proficiency and creativity.
                                                 Beyond web development, I am also passionate about Machine Learning and have contributed to some projects in this exciting field.</Box>
                                         </Typography>
@@ -176,47 +174,53 @@ export const Home = () => {
                                 </Grid>
                             </Box>
                             <Box mt='1rem'>
-                                <Grid ml='10%' mr='10%' display='flex' flexDirection='column' gap={3}>
+                                <Grid ml='5%' mr='5%' display='flex' flexDirection='column' gap={1}>
                                     <ScrollAnimation>
                                         <Grid xs={12} sm={12} md={12}>
-                                            <Typography sx={{ fontWeight: 'bold', fontSize: '1.5rem' }}>Education</Typography>
+                                            <Typography sx={{ fontWeight: 'bold', fontSize: '1.5rem', color: colors.lightGrey }}>Education</Typography>
                                         </Grid>
                                     </ScrollAnimation>
                                     <ScrollAnimation>
-                                        <Grid display='flex' flexDirection='row' justifyContent='space-between' gap={2}>
+                                        <Grid display='flex' flexDirection='column' justifyContent='space-between' gap={2}>
                                             <Grid
                                                 xs={12} sm={12} md={12}
                                                 display='flex'
-                                                flexDirection='column'
+                                                flexDirection='row'
                                                 justifyContent='center'
                                                 alignItems='center'
+                                                gap={2}
                                                 sx={{
-                                                    height: '20vh',
-                                                    background: 'linear-gradient(to bottom right, #F5F5F5, grey)',
+                                                    height: '100%',
+                                                    background: `linear-gradient(to bottom right, #F5F5F5, ${colors.lightGrey})`,
                                                     borderRadius: '5px',
-                                                    width: '80%'
+                                                    width: '100%',
+                                                    paddingTop: '5px',
+                                                    paddingBottom: '5px'
                                                 }}
                                             >
-                                                <Typography align='center'>2016-2018</Typography>
-                                                <Typography align='center' sx={{ fontWeight: 'bold' }}>Master of Technology</Typography>
-                                                <Typography align='center'>Indian Institute of Technology, Madras</Typography>
+                                                <Typography align='center' sx={{ fontWeight: 'bold', fontSize: isMobile ? 'small' : 'medium' }}>{'Master of Technology'}</Typography>
+                                                <Typography align='center' sx={{fontSize: isMobile ? 'small' : 'medium'}}>{'Indian Institute of Technology, Madras'}</Typography>
+                                                <Typography align='center' sx={{fontSize: isMobile ? 'small' : 'medium'}}>2016-2018</Typography>
                                             </Grid>
                                             <Grid
                                                 xs={12} sm={12} md={12}
                                                 display='flex'
-                                                flexDirection='column'
+                                                flexDirection='row'
                                                 justifyContent='center'
                                                 alignItems='center'
+                                                gap={2}
                                                 sx={{
-                                                    height: '20vh',
-                                                    background: 'linear-gradient(to bottom right, #F5F5F5, grey)',
+                                                    height: '100%',
+                                                    background: `linear-gradient(to bottom right, #F5F5F5, ${colors.lightGrey})`,
                                                     borderRadius: '5px',
-                                                    width: '80%'
+                                                    width: '100%',
+                                                    paddingTop: '5px',
+                                                    paddingBottom: '5px'
                                                 }}
                                             >
-                                                <Typography align='center'>2010-2014</Typography>
-                                                <Typography align='center' sx={{ fontWeight: 'bold' }}>Bachelor of Technology</Typography>
-                                                <Typography align='center'>Indian Institute of Technology, Bhubaneswar</Typography>
+                                                <Typography align='center' sx={{ fontWeight: 'bold', fontSize: isMobile ? 'small' : 'medium' }}>Bachelor of Technology</Typography>
+                                                <Typography align='center'sx={{fontSize: isMobile ? 'small' : 'medium'}}>Indian Institute of Technology, Bhubaneswar</Typography>
+                                                <Typography align='center'sx={{fontSize: isMobile ? 'small' : 'medium'}} >2010-2014</Typography>
                                             </Grid>
                                         </Grid>
                                     </ScrollAnimation>

@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material"
+import { colors } from "../utils/colorCode/colors"
 
 export const SkillCard = ({skill}) => {
     return (
@@ -8,7 +9,7 @@ export const SkillCard = ({skill}) => {
             justifyContent='center'
             sx={{
                 height: '20vh',
-                background: 'linear-gradient(to bottom right, #F5F5F5, grey)',
+                background: `linear-gradient(to bottom right, #F5F5F5, ${colors.lightGrey})`,
                 borderRadius: '5px',
                 width: '100%'
             }}

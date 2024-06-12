@@ -1,4 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { colors } from "../utils/colorCode/colors";
 
 export const ProjectCard = ({ projectNum, title, image, description, techStack }) => {
     const theme = useTheme();
@@ -11,11 +12,11 @@ export const ProjectCard = ({ projectNum, title, image, description, techStack }
                     <Grid item xs={12} sm={12} md={6} display='flex' justifyContent='center' alignItems='center'>
                         <Grid>
                             <Typography align="center" sx={{ fontSize: isMobile ? '1.5rem' : '2rem' }}>{`${projectNum + 1}. ${title}`}</Typography>
-                            <Typography align="center">{description}</Typography>
+                            <Typography align="center" sx={{ color: colors.darkGrey }}>{description}</Typography>
                             <Typography align="center">
-                                <Box sx={{fontWeight: 'bold', marginTop:'2vh'}}>
+                                <Box sx={{ fontWeight: 'bold', marginTop: '2vh' }}>
                                     {'Techonology: '}
-                                    <Typography sx={{fontSize: 'small'}}>{techStack}</Typography>
+                                    <Typography color={colors.lightGrey} sx={{ fontSize: 'small' }}>{techStack}</Typography>
                                 </Box>
                             </Typography>
                         </Grid>
@@ -23,7 +24,7 @@ export const ProjectCard = ({ projectNum, title, image, description, techStack }
                     <Grid item xs={12} sm={12} md={6} display='flex' justifyContent='center' alignItems='center'>
                         <img src={image} alt="Project" style={{ maxWidth: '80%', height: 'auto' }} />
                     </Grid>
-                </Grid> 
+                </Grid>
             ) : (
                 <>
                     <Grid item xs={12} sm={12} md={6} display='flex' justifyContent='center' alignItems='center'>
@@ -31,28 +32,28 @@ export const ProjectCard = ({ projectNum, title, image, description, techStack }
                             <img src={image} alt="Project" style={{ maxWidth: '80%', height: 'auto' }} />
                         ) : (
                             <Grid>
-                                <Typography align="center" sx={{ fontSize: isMobile ? '1.5rem' : '2rem' }}>{`${projectNum + 1}. ${title}`}</Typography>
-                                <Typography align="center">{description}</Typography>
+                                <Typography align="center" style={{color: colors.darkGrey}} sx={{ fontSize: isMobile ? '1.5rem' : '2rem' }}>{`${projectNum + 1}. ${title}`}</Typography>
+                                <Typography align="center" style={{color: colors.lightGrey}}>{description}</Typography>
                                 <Typography align="center">
-                                <Box sx={{fontWeight: 'bold', marginTop:'2vh'}}>
-                                    {'Techonology: '}
-                                    <Typography sx={{fontSize: 'small'}}>{techStack}</Typography>
-                                </Box>
-                            </Typography>
+                                    <Box sx={{ fontWeight: 'bold', marginTop: '2vh', color: colors.darkGrey }}>
+                                        {'Techonology: '}
+                                        <Typography style={{color: colors.lightGrey}} sx={{ fontSize: 'small' }}>{techStack}</Typography>
+                                    </Box>
+                                </Typography>
                             </Grid>
                         )}
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} display='flex' justifyContent='center' alignItems='center'>
                         {isEven ? (
                             <Grid>
-                                <Typography align="center" sx={{ fontSize: isMobile ? '1.5rem' : '2rem' }}>{`${projectNum + 1}. ${title}`}</Typography>
-                                <Typography align="center">{description}</Typography>
+                                <Typography align="center" style={{color: colors.darkGrey}} sx={{ fontSize: isMobile ? '1.5rem' : '2rem' }}>{`${projectNum + 1}. ${title}`}</Typography>
+                                <Typography style={{color: colors.lightGrey}} align="center">{description}</Typography>
                                 <Typography align="center">
-                                <Box sx={{fontWeight: 'bold', marginTop:'2vh'}}>
-                                    {'Techonology: '}
-                                    <Typography sx={{fontSize: 'small'}}>{techStack}</Typography>
-                                </Box>
-                            </Typography>
+                                    <Box sx={{ fontWeight: 'bold', marginTop: '2vh', color: colors.darkGrey }}>
+                                        {'Techonology: '}
+                                        <Typography style={{color: colors.lightGrey}} sx={{ fontSize: 'small' }}>{techStack}</Typography>
+                                    </Box>
+                                </Typography>
                             </Grid>
                         ) : (
                             <img src={image} alt="Project" style={{ maxWidth: '80%', height: 'auto' }} />
