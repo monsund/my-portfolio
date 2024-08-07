@@ -144,7 +144,7 @@ export const Home = () => {
                     </Grid>
                 </Element>
 
-                {/* ---------------Intro section-------------------*/}
+                {/* ---------------Intro section----------------*/}
                 <Element name="intro">
                     <ScrollAnimation>
                         <Box marginTop={8} backgroundColor='white'>
