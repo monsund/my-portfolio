@@ -1,95 +1,158 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ExploreRows from '@/components/ExploreRows';
+import Hero from '@/components/Hero';
+import Section from '@/components/Section';
+import Skills from '@/components/Skills';
+import { Cloud, Email, GitHub, LinkedIn } from '@mui/icons-material';
+import { Box, Button, Stack } from '@mui/material';
+
+const ctaSx = {
+  borderRadius: 2,
+  px: 2.2,
+  py: 1.1,
+  minWidth: 180, // uniform width
+  borderColor: '#dfe7f5',
+  bgcolor: '#ffffff',
+  boxShadow: '0 8px 20px rgba(0,0,0,.06)',
+  textTransform: 'none',
+  fontWeight: 600,
+  transition: 'transform .15s ease, box-shadow .2s ease',
+  '&:hover': {
+    transform: 'translateY(-2px)',
+    boxShadow: '0 12px 28px rgba(0,0,0,.10)',
+    borderColor: '#cfe7fb',
+    bgcolor: '#fff',
+  },
+};
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Hero />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+      <Section
+        title="Explore My World"
+        description={
+          <>
+            Discover my professional work, travel adventures, and personal{' '}
+            <strong>interests</strong> across three main areas.
+          </>
+        }
+        dense
+      >
+        <ExploreRows />
+      </Section>
+
+      <Section title="Skills">
+        <Skills />
+      </Section>
+
+      <Section title="Education">
+        <Box
+          sx={{
+            display: 'grid',
+            gap: 3,
+            gridTemplateColumns: {
+              xs: '1fr',
+              sm: '1fr 1fr',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              p: 2.5,
+              border: '1px solid',
+              borderColor: 'divider',
+              borderRadius: 2,
+              bgcolor: 'background.paper',
+              boxShadow: 1,
+            }}
+          >
+            <Box sx={{ fontWeight: 700, fontSize: '1.2rem', mb: 0.5 }}>
+              B.Tech – Indian Institute of Technology (IIT) Bhubaneswar
+            </Box>
+            <Box sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
+              Graduated with a strong engineering foundation, later
+              transitioning into software development and product building.
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              p: 2.5,
+              border: '1px solid',
+              borderColor: 'divider',
+              borderRadius: 2,
+              bgcolor: 'background.paper',
+              boxShadow: 1,
+            }}
+          >
+            <Box sx={{ fontWeight: 700, fontSize: '1.2rem', mb: 0.5 }}>
+              M.Tech – Indian Institute of Technology (IIT) Madras
+            </Box>
+            <Box sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
+              Advanced engineering education with a focus on problem-solving and
+              automation, paving the path toward building scalable software
+              systems.
+            </Box>
+          </Box>
+        </Box>
+      </Section>
+
+      <Section
+        title="Connect With Me"
+        description="Explore my code, check live deployments, or say hello."
+        dense
+      >
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ mt: 1 }}
+        >
+          <Button
+            variant="outlined"
+            startIcon={<GitHub sx={{ fontSize: 20 }} />}
+            href="https://github.com/monsund/stock-pilot"
             target="_blank"
             rel="noopener noreferrer"
+            sx={ctaSx}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            GitHub
+          </Button>
+
+          <Button
+            variant="outlined"
+            startIcon={<LinkedIn sx={{ fontSize: 20 }} />}
+            href="https://www.linkedin.com/in/monsoon-dibragede-22077149/"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondary}
+            sx={ctaSx}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            LinkedIn
+          </Button>
+
+          <Button
+            variant="outlined"
+            startIcon={<Cloud sx={{ fontSize: 20 }} />}
+            href="https://stock-pilot-frontend.vercel.app/" // or your Vercel org
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={ctaSx}
+          >
+            Vercel
+          </Button>
+
+          <Button
+            variant="outlined"
+            startIcon={<Email sx={{ fontSize: 20 }} />}
+            href="mailto:monsoon.dibragede@gmail.com"
+            sx={ctaSx}
+          >
+            Email Me
+          </Button>
+        </Stack>
+      </Section>
+    </>
   );
 }
