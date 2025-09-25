@@ -196,7 +196,7 @@ export default function TravelPage() {
     <>
       <TravelHero />
 
-      {travelRegions.map((region, index) => (
+      {travelRegions.map(region => (
         <Section
           key={region.name}
           title={region.name}

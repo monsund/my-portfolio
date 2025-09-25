@@ -15,10 +15,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        />
+      </head>
       <body>
         <ThemeRegistry>
           <Nav />
-          <main>{children}</main>
+          <main
+            style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}
+          >
+            {children}
+          </main>
           <Footer />
         </ThemeRegistry>
       </body>

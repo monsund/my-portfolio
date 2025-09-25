@@ -5,23 +5,23 @@ import {
   Chip,
   Card as MUICard,
   Typography,
-} from '@mui/material'
-import Link from 'next/link'
+} from '@mui/material';
+import Link from 'next/link';
 
 type Props = {
-  href: string
-  cover: string
-  title: string
-  summary: string
-  category: 'work' | 'travel' | 'leisure'
-}
+  href: string;
+  cover: string;
+  title: string;
+  summary: string;
+  category: 'work' | 'travel' | 'leisure';
+};
 
 const chipSx = (cat: Props['category']) =>
   cat === 'work'
     ? { bgcolor: '#eff6ff', color: '#1d4ed8', borderColor: '#bfdbfe' }
     : cat === 'travel'
       ? { bgcolor: '#ecfeff', color: '#0f766e', borderColor: '#99f6e4' }
-      : { bgcolor: '#fff7ed', color: '#b45309', borderColor: '#fde68a' }
+      : { bgcolor: '#fff7ed', color: '#b45309', borderColor: '#fde68a' };
 
 export default function Card({ href, cover, title, summary, category }: Props) {
   return (
@@ -50,5 +50,5 @@ export default function Card({ href, cover, title, summary, category }: Props) {
         </CardContent>
       </CardActionArea>
     </MUICard>
-  )
+  );
 }

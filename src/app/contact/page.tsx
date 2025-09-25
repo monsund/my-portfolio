@@ -23,7 +23,7 @@ import { FormEvent, useState } from 'react';
 
 export default function ContactPage() {
   const [open, setOpen] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [error, setError] = useState<string | null>(null);
 
@@ -70,9 +70,9 @@ export default function ContactPage() {
       rel="noopener noreferrer"
       sx={{
         borderRadius: 2,
-        px: 2.2,
+        px: { xs: 1.5, sm: 2.2 },
         py: 1.1,
-        minWidth: 180,
+        minWidth: { xs: 140, sm: 180 },
         borderColor: '#dfe7f5',
         bgcolor: '#ffffff',
         boxShadow: '0 8px 20px rgba(0,0,0,.06)',

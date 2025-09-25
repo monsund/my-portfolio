@@ -1,20 +1,20 @@
-import Image from 'next/image'
-import Section from '../../../components/Section'
-import { getBySlug } from '../../../lib/content'
+import Image from 'next/image';
+import Section from '../../../components/Section';
+import { getBySlug } from '../../../lib/content';
 
 export default async function TravelDetail({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params
-  const item = getBySlug('travel', slug)
+  const { slug } = await params;
+  const item = getBySlug('travel', slug);
   if (!item)
     return (
       <div className="container" style={{ padding: '64px 0' }}>
         Not found
       </div>
-    )
+    );
 
   return (
     <Section title={item.title}>
@@ -39,5 +39,5 @@ export default async function TravelDetail({
         <p style={{ color: 'var(--muted)' }}>{item.summary}</p>
       </div>
     </Section>
-  )
+  );
 }

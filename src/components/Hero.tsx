@@ -3,13 +3,15 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <Container sx={{ py: { xs: 4, md: 8 } }}>
+    <Container sx={{ py: { xs: 4, md: 8 }, maxWidth: '100%' }}>
       <Box
         sx={{
           display: 'grid',
           gridTemplateColumns: { xs: '1fr', md: '1.2fr 0.8fr' },
           gap: { xs: 4, md: 6 },
           alignItems: 'center',
+          width: '100%',
+          maxWidth: '100%',
         }}
       >
         {/* Left: Text */}

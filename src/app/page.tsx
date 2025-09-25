@@ -7,9 +7,9 @@ import { Box, Button, Stack } from '@mui/material';
 
 const ctaSx = {
   borderRadius: 2,
-  px: 2.2,
+  px: { xs: 1.5, sm: 2.2 },
   py: 1.1,
-  minWidth: 180, // uniform width
+  minWidth: { xs: 140, sm: 180 }, // responsive uniform width
   borderColor: '#dfe7f5',
   bgcolor: '#ffffff',
   boxShadow: '0 8px 20px rgba(0,0,0,.06)',
@@ -108,7 +108,12 @@ export default function Home() {
           spacing={2}
           justifyContent="center"
           alignItems="center"
-          sx={{ mt: 1 }}
+          sx={{
+            mt: 1,
+            width: '100%',
+            maxWidth: '100%',
+            flexWrap: 'wrap',
+          }}
         >
           <Button
             variant="outlined"

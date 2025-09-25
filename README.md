@@ -1,8 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 Monsoon.dev - Personal Portfolio
 
-## Getting Started
+A modern, responsive portfolio website showcasing work experience, travel journeys, and personal projects. Built with Next.js 15, React 19, and Material-UI 7.
 
-First, run the development server:
+## 🚀 Features
+
+- **🏠 Home Page**: Hero section with gradient animations and project highlights
+- **👨‍💻 About Page**: Personal introduction, skills, and recent work highlights
+- **💼 Work Experience**: Featured case studies including:
+  - StockPilot — AI Trading Agent (MCP + SLM)
+  - Pendo — Property Management Platform
+  - Panasonic BatteryOps — Workflow Streamlining Platform
+- **🌍 Travel Gallery**: Region-based photo galleries from 10+ countries
+- **📱 Responsive Design**: Mobile-first approach with smooth animations
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.5.4 with App Router
+- **Frontend**: React 19.1.0 + TypeScript 5
+- **UI Library**: Material-UI 7.3.2 (@mui/material)
+- **Icons**: Material-UI Icons (@mui/icons-material)
+- **Styling**: Emotion (CSS-in-JS)
+- **Code Quality**: ESLint 9 + Prettier
+- **Deployment**: Optimized for Vercel
+
+## 🏃‍♂️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/monsund/my-portfolio.git
+cd my-portfolio
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +57,127 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                      # Next.js App Router pages
+│   ├── about/page.tsx       # About page with skills & experience
+│   ├── work/page.tsx        # Work experience & case studies
+│   ├── travel/page.tsx      # Travel gallery by regions
+│   └── page.tsx             # Home page
+├── components/              # Reusable React components
+│   ├── Hero.tsx            # Hero section with animations
+│   ├── Nav.tsx             # Navigation with active states
+│   ├── Section.tsx         # Section wrapper component
+│   ├── ExploreRows.tsx     # Project showcase cards
+│   └── work/               # Work-specific components
+├── lib/                    # Utilities and types
+└── content/               # Content data files
+```
 
-## Learn More
+## 🎨 Key Components
 
-To learn more about Next.js, take a look at the following resources:
+### Hero Section
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Gradient text animations
+- Responsive typography
+- Call-to-action buttons
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Work Experience
 
-## Deploy on Vercel
+- **StockPilot**: AI trading agent with MCP integration
+- **Pendo**: Full-stack property management platform
+- **BatteryOps**: Micro-UI architecture with Module Federation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Travel Gallery
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Europe**: Austria, Belgium, Czech Republic, France, Germany, etc.
+- **Kazakhstan**: Central Asian cultural experiences
+- **India**: Himalayan and Northeast regional adventures
+- **Vietnam**: Southeast Asian cultural immersion
+
+## 📋 Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+
+# Code Quality
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint issues
+npm run format       # Format with Prettier
+npm run format:check # Check Prettier formatting
+npm run type-check   # TypeScript type checking
+```
+
+## 🌐 Pages & Routes
+
+- `/` - Home page with hero and project overview
+- `/about` - About page with personal intro and skills
+- `/work` - Work experience and case studies
+- `/travel` - Travel photo gallery by regions
+- `/work/[slug]` - Individual work case study pages
+- `/travel/[slug]` - Individual travel story pages
+
+## 🎨 Design System
+
+- **Colors**: Light blue theme with gradient accents
+- **Typography**: Material-UI typography scale
+- **Spacing**: Consistent 8px grid system
+- **Animations**: Subtle hover effects and transitions
+- **Responsive**: Mobile-first with breakpoints at sm, md, lg
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env.local` file for any environment-specific configuration:
+
+```bash
+# Add your environment variables here
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+### ESLint & Prettier
+
+The project includes pre-configured ESLint and Prettier setups:
+
+- ESLint 9 with Next.js configuration
+- Prettier integration for consistent formatting
+- VS Code settings for real-time error highlighting
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Deploy automatically on every push
+
+### Manual Build
+
+```bash
+npm run build
+npm run start
+```
+
+## 📧 Contact
+
+- **Email**: monsoon.dibragede@gmail.com
+- **LinkedIn**: [Monsoon Dibragede](https://www.linkedin.com/in/monsoon-dibragede-22077149/)
+- **GitHub**: [monsund](https://github.com/monsund)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ using Next.js, React, and Material-UI

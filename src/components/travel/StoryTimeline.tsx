@@ -18,7 +18,7 @@ export default function StoryTimeline() {
 
           {stories
             .filter(s => s.year === y)
-            .map((s, i) => (
+            .map(s => (
               <Paper
                 key={s.id}
                 component={Link}

@@ -1,4 +1,4 @@
-import { LeisureItem } from '../lib/types'
+import { LeisureItem } from '../lib/types';
 
 const leisure: LeisureItem[] = [
   {
@@ -12,6 +12,6 @@ const leisure: LeisureItem[] = [
     type: 'playlist',
     tags: ['music', 'weekend'],
   },
-]
+];
 
-export default leisure
+export default leisure;
