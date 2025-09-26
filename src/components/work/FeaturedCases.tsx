@@ -26,7 +26,7 @@ const featured: CaseItem[] = [
     // period: '2024',
     summary:
       'Modular agent platform (MCP + SLM) that automates trade research and execution. Robust tool orchestration and observability.',
-    stack: ['Next.js', 'Node', 'FastAPI', 'MCP', 'AI Agents'],
+    stack: ['Next.js', 'Node', 'FastAPI', 'MCP', 'AI Agents', 'SLM'],
     cta: 'GitHub Repo',
     ctaLink: 'https://github.com/monsund/stock-pilot',
     ui: 'UI Link',
@@ -39,7 +39,7 @@ const featured: CaseItem[] = [
     role: 'Fullstack Engineer',
     // period: '2022–23',
     summary:
-      'A full-featured rental management platform that streamlines every stage of property operations — from online applications and tenant screening to digital lease signing, automated rent collection, inspections, financial tracking, and property listings.',
+      'A full-featured rental management platform that streamlines every stage of property operations — from online applications and tenant screening to digital lease signing, automated rent collection, inspections, financial tracking, and property listings. Platform processes $2M+/month in transactions.',
     stack: [
       'React.js',
       'Node.js',
@@ -48,6 +48,7 @@ const featured: CaseItem[] = [
       'AWS SQS',
       'Redis',
       'Mandril',
+      'Microservices',
     ],
     cta: 'Private project - Canadian client',
   },
@@ -59,7 +60,14 @@ const featured: CaseItem[] = [
     // period: '2021',
     summary:
       'This platform is designed to streamline the various processes involved in a Battery Manufacturing Unit by seamlessly integrating multiple micro applications. It optimizes raw material management, maintains efficient workflows, and monitors assembly lines to ensure quality control at every stage. The platform facilitates real-time inventory tracking, automates order processing, and enhances supply chain coordination, significantly improving operational efficiency and productivity.',
-    stack: ['React.js', 'Module Federation', 'Postgres', 'Kafka', 'Storybook'],
+    stack: [
+      'React.js',
+      'Module Federation',
+      'Postgres',
+      'Kafka',
+      'Storybook',
+      'Microservices',
+    ],
     cta: 'Private project - Panasonic US',
   },
   {

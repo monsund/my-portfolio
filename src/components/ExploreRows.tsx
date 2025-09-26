@@ -25,7 +25,7 @@ const rows = [
   },
   {
     title: 'Leisure & Now',
-    href: '/',
+    href: '/leisure',
     cover: '/images/leisure/leisure-cover.jpg',
     subtitle: 'Music • Food • Hobbies',
     summary:

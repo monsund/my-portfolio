@@ -26,7 +26,7 @@ const links = [
   { href: '/about', label: 'About' },
   { href: '/work', label: 'Work' },
   { href: '/travel', label: 'Travel' },
-  //   { href: '/leisure', label: 'Leisure' },
+  { href: '/leisure', label: 'Leisure' },
 ];
 
 export default function Nav() {

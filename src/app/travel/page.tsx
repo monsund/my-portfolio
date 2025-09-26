@@ -119,7 +119,7 @@ const travelRegions = [
         title: 'Saty village',
       },
       {
-        src: '/images/travel/kazakhstan/kazaks-12.jpg',
+        src: '/images/travel/kazakhstan/Kazaks-12.jpg',
         alt: 'Singing Dune (Barkhan) desert landscape',
         title: 'Singing Dune (Barkhan)',
       },
@@ -156,6 +156,11 @@ const travelRegions = [
         title: 'Jaipur, Rajasthan',
       },
       {
+        src: '/images/travel/india/Mahabalipuram.jpg',
+        alt: 'Mahabalipuram rock-cut temples',
+        title: 'Mahabalipuram, Tamil Nadu',
+      },
+      {
         src: '/images/travel/india/Auli.jpg',
         alt: 'Auli ski resort in Uttarakhand',
         title: 'Auli, Uttarakhand',
@@ -185,6 +190,11 @@ const travelRegions = [
       {
         src: '/images/travel/vietnam/vietnam-5.jpg',
         alt: 'Sapa rice terraces',
+        // title: 'Sapa Rice Terraces',
+      },
+      {
+        src: '/images/travel/vietnam/vietnam-7.jpg',
+        alt: 'Sapa rice terr    aces',
         // title: 'Sapa Rice Terraces',
       },
     ],
