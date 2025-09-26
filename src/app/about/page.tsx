@@ -116,15 +116,6 @@ export default function AboutPage() {
                   >
                     View Work
                   </Button>
-                  {/* <Button
-                    component={Link}
-                    href="/contact"
-                    variant="outlined"
-                    color="inherit"
-                    sx={{ px: 3, py: 1.25 }}
-                  >
-                    Let’s Talk
-                  </Button> */}
                 </Stack>
 
                 {/* Social Links */}
@@ -225,9 +216,26 @@ export default function AboutPage() {
           <Box>
             <Card variant="outlined" sx={{ borderRadius: 3 }}>
               <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-                  Recent Focus
-                </Typography>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="space-between"
+                  sx={{ mb: 1 }}
+                >
+                  <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                    Recent Focus
+                  </Typography>
+                  <Button
+                    component="a"
+                    href="https://stock-pilot-frontend.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="text"
+                    sx={{ textTransform: 'none', fontWeight: 600 }}
+                  >
+                    ▲ Vercel
+                  </Button>
+                </Stack>
                 <Typography color="text.secondary">
                   AI-assisted workflows (SLM/LangGraph/MCP), property ops, and
                   manufacturing platforms with Micro-UI + Module Federation.

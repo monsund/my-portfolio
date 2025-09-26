@@ -70,7 +70,7 @@ const groups: Group[] = [
     skills: [
       { name: 'LangChain / LangGraph' },
       { name: 'MCP (tool adapters)' },
-      { name: 'Prompting / RAG basics' },
+      { name: 'Prompting / RAG' },
     ],
   },
   {
@@ -80,7 +80,7 @@ const groups: Group[] = [
     skills: [
       { name: 'Vercel / Render / Workers' },
       { name: 'CI/CD (GitHub Actions)' },
-      { name: 'Perf & Observability basics' },
+      { name: 'Perf & Observability' },
     ],
   },
 ];

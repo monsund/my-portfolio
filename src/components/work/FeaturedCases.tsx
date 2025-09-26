@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 type CaseItem = {
   title: string;
-  slug: string;
+  slug?: string;
   cover: string;
   role: string;
   period?: string;
@@ -20,7 +20,7 @@ type CaseItem = {
 const featured: CaseItem[] = [
   {
     title: 'StockPilot — AI Trading Agent',
-    slug: 'stockpilot-ai-trading-agent',
+    // slug: 'stockpilot-ai-trading-agent',
     cover: '/images/work/stockpilot.jpg',
     role: 'Product Builder · Full-Stack',
     // period: '2024',
@@ -34,7 +34,7 @@ const featured: CaseItem[] = [
   },
   {
     title: 'Pendo — Property Management Platform',
-    slug: 'property-management-platform',
+    // slug: 'property-management-platform',
     cover: '/images/work/pendo-platform.gif',
     role: 'Fullstack Engineer',
     // period: '2022–23',
@@ -54,7 +54,7 @@ const featured: CaseItem[] = [
   },
   {
     title: 'Panasonic BatteryOps — Workflow Streamlining Platform',
-    slug: 'panasonic-batteryops',
+    // slug: 'panasonic-batteryops',
     cover: '/images/work/panasonic.gif',
     role: 'Frontend Engineer · Lead',
     // period: '2021',
@@ -72,7 +72,7 @@ const featured: CaseItem[] = [
   },
   {
     title: 'Contract Abstraction Tool',
-    slug: 'contract-abstraction-tool',
+    // slug: 'contract-abstraction-tool',
     cover: '/images/work/contract-abstraction.gif',
     role: 'Fullstack Engineer',
     // period: '2021',
@@ -92,7 +92,7 @@ const featured: CaseItem[] = [
   },
   {
     title: 'Weather Forecasting Tool',
-    slug: 'weather-forecasting-tool',
+    // slug: 'weather-forecasting-tool',
     cover: '/images/work/weather-forecasting.gif',
     role: 'Fullstack Engineer',
     // period: '2021',
@@ -107,8 +107,8 @@ const featured: CaseItem[] = [
 function CaseRow({ item, flip = false }: { item: CaseItem; flip?: boolean }) {
   return (
     <Paper
-      component={Link}
-      href={`/work/${item.slug}`}
+      component={item.slug ? Link : 'div'}
+      href={item.slug ? `/work/${item.slug}` : undefined}
       sx={{
         p: 2.5,
         display: 'grid',
