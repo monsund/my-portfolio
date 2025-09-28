@@ -47,9 +47,9 @@ const groups: Group[] = [
       { name: 'React / Next.js' },
       { name: 'TypeScript' },
       { name: 'Material-UI' },
-      { name: 'Zustand / Redux Toolkit' },
+      { name: 'Redux Toolkit' },
       { name: 'React Hook Form' },
-      { name: 'Framer Motion' },
+      { name: 'Tailwind CSS' },
     ],
   },
   {

@@ -22,17 +22,21 @@ export type Trip = {
 };
 
 export const countries = [
-  'Iceland',
-  'Norway',
   'Austria',
-  'Switzerland',
-  'Netherlands',
-  'Kazakhstan',
-  'Vietnam',
-  'India · Himachal',
-  'India · Uttarakhand',
+  'Belgium',
+  'Cezch Republic',
+  'France',
+  'Germany',
+  'Iceland',
   'India · Arunachal',
+  'India · Himachal',
   'India · Meghalaya',
+  'India · Uttarakhand',
+  'Kazakhstan',
+  'Netherlands',
+  'Norway',
+  'Switzerland',
+  'Vietnam',
 ];
 
 export const stories: Story[] = [

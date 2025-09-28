@@ -61,7 +61,7 @@ const travelRegions = [
   {
     name: 'Kazakhstan',
     description:
-      'Vast steppes, modern cities, and rich nomadic heritage in Central Asia.',
+      'Vast steppes, modern cities, lakes, and rich nomadic heritage in Central Asia.',
     photos: [
       {
         src: '/images/travel/kazakhstan/kazaks-10.jpg',
